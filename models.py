@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -14,5 +14,6 @@ class News(Base):
     category_id = Column(Integer)
     location_id = Column(Integer)
     site_id = Column(Integer)
+    is_read = Column(Boolean, default=False)
 
 # Если у вас есть еще какие-то поля в таблице, добавьте их в модель, чтобы они соответствовали вашей базе данных.

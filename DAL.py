@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from models import Base
 import databases
 import sqlalchemy
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from databases import Database
 from sqlalchemy.orm import sessionmaker
@@ -33,5 +33,6 @@ news = sqlalchemy.Table(
     Column("category_id", Integer),
     Column("location_id", Integer),
     Column("site_id", Integer),
+    Column("is_read", Boolean, default=False)
 )
 
